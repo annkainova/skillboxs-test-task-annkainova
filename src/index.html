@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>skillbox-test-task-annkainova</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <section class="price container">
+    <div class="wrapper-price-info">
+      <div class="price-info">
+        <div class="price-info__header">
+          <h4 class="price-info__title h-4">Заполните форму, <br> чтобы оформить заказ</h4>
+          <p class="price-info__description p">Забронируйте курсы со скидкой, а мы перезвоним, проконсультируем и
+            оформим
+            заказ.</p>
+        </div>
+        <div>
+          <p class="price-info__subtitle price-info__final-price t-2">Итоговая стоимость</p>
+          <div class="price-card">
+            <div>
+              <div class="price-card__old-price t-4">
+                <span class="t-4">000 000</span>
+                <span class="price-card__currency t-4">Р</span>
+              </div>
+              <div class="price-card__new-price t-4">
+                <p class="title-price h-4">0 000</p>
+                <sup class="price-card__currency t-4">Р/мес.</sup>
+              </div>
+              <p class="p p-12">Рассрочка на NN месяцев</p>
+            </div>
+            <div class="sale-icon">
+              <span class="sale-icon__value t-6">-00%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-info">
+        <div class="payment-method">
+          <p class="price-info__subtitle t-2">Выберите вариант оплаты</p>
+          <div class="payment-method__wrapper">
+
+            <div class="payment-method__block">
+              <label class="payment-method__label">
+                <input class="radio-input" type="radio" checked name="payment-type">
+                <span class="payment-method__box">
+                  <span class="payment-method__descrp p-14">Оставить заявку <br> на консультацию</span>
+                  <span></span>
+                </span>
+              </label>
+            </div>
+
+            <div class="payment-method__block">
+              <label class="payment-method__label">
+                <input class="radio-input" type="radio" name="payment-type">
+                <span class="payment-method__box">
+                  <span class="payment-method__descrp p-14 p">Оплатить всю сумму <br> со скидкой 7000 Р</span>
+                  <div class="payment-method__icon">
+                    <img src="/src/icons/payment-logo__visa.svg" alt="Visa">
+                    <img src="/src/icons/payment-logo__mir.svg" alt="Mir">
+                    <img src="/src/icons/payment-logo__mastercard.svg" alt="MasterCard">
+                  </div>
+                </span>
+              </label>
+            </div>
+
+            <div class="payment-method__block">
+              <label class="payment-method__label">
+                <input class="radio-input" type="radio" name="payment-type">
+                <span class="payment-method__box">
+                  <span class=" payment-method__descrp p-14">В рассрочку в Покупай <br> со Сбером</span>
+                  <div class="payment-method__icon">
+                    <img src="/src/icons/payment-logo__sber.png" alt="Sber">
+                  </div>
+                </span>
+              </label>
+            </div>
+            <div class="payment-method__block">
+              <label class="payment-method__label">
+                <input class="radio-input" type="radio" name="payment-type">
+                <span class="payment-method__box">
+                  <span class="payment-method__descrp p-14">В рассрочку <br> в Тинькофф </span>
+                  <div class="payment-method__icon">
+                    <img src="/src/icons/payment-logo__tinkoff.svg" alt="Tinkoff">
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="price-info__subtitle t-2">Заполните контактные данные</p>
+      <form action="" id="form">
+        <div class="form-input">
+          <div class="input">
+            <input data-min-length="2" class=" input__field" type="name" name="name" id="name-input" placeholder=" " />
+            <span class="input__label p">Имя</span>
+          </div>
+          <div class="input">
+            <input class="input__field" type="tel" name="phone" id="phone-input" placeholder=" "
+              pattern="^[+()]*[0-9][- +()0-9]*$" />
+            <span class="input__label p">Телефон</span>
+          </div>
+          <div class="input">
+            <input class="input__field" type="email" name="email" id="mail-input" placeholder=" ">
+            <span class="input__label p">Электронная почта</span>
+          </div>
+        </div>
+        <button class="price-info__button button f-18">Отправить</button>
+      </form>
+      <p class="price-info__policy p-12">Нажимая на кнопку, я соглашаюсь на <a class="price-info__link"
+          href="">обработку персональных
+          данных</a> и
+        <a class="price-info__link" href="">
+          с правилами
+          пользования Платформой
+        </a>
+      </p>
+    </div>
+    </div>
+  </section>
+
+</body>
+<script src="js/index.js"></script>
+
+</html>

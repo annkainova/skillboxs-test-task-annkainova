@@ -1,0 +1,345 @@
+@import './reset';
+@import './variables';
+@import './general';
+
+body {
+  background-color: $variable;
+}
+
+.container {
+  max-width: 1168px;
+  margin: auto;
+
+  @media (max-width: 1024px) {
+    max-width: 928px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 696px;
+  }
+
+  @media (max-width: 360px) {
+    max-width: 360px;
+  }
+
+  @media (max-width: 320px) {
+    max-width: 320px;
+  }
+}
+
+.price {
+  @include vertical-align;
+
+  background-color: $variable;
+}
+
+.wrapper-price-info {
+  display: grid;
+  grid-template-columns: 1fr 592px;
+  gap: 8px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 472px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.price-info {
+  @include flex-direction(column);
+  justify-content: space-between;
+
+  @include br(20px);
+
+  background-color: $bg__main;
+  padding: 40px;
+
+  @media (max-width: 768px) {
+    padding: 32px 120px;
+  }
+
+  @media (max-width: 360px) {
+    padding: 40px 20px;
+  }
+
+  @media (max-width: 320px) {
+    padding: 40px 20px 50px;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__final-price {
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    margin-top: 32px;
+
+    background: $accent__brand;
+    color: $bg__main;
+
+    &:hover {
+      background: $accent__always-black;
+    }
+
+    &:disabled {
+      background: $bg__secondary-accent;
+      color: $text__disable;
+    }
+  }
+
+  &__policy {
+    margin-top: 16px;
+
+    color: $text__secondary;
+  }
+
+  &__link {
+    &:visited {
+      color: $text__secondary;
+    }
+  }
+}
+
+
+.price-card {
+  position: relative;
+
+  @include flex-direction(row);
+  justify-content: space-between;
+
+  padding: 20px;
+
+  @include br(20px);
+
+  background: $bg__secondary;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+
+  &__old-price {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 9px;
+      left: 0;
+
+      width: 72px;
+      height: 2px;
+
+      background: linear-gradient(to bottom,
+          $accent__always-black 50%, $accent__always-white 50%);
+
+      content: '';
+    }
+  }
+
+  &__currency {
+    margin-left: 4px;
+  }
+
+  &__new-price {
+    @include flex-direction(row);
+
+    margin-top: 16px;
+    margin-bottom: 4px;
+
+    @media (max-width: 768px) {
+      margin-top: 12px;
+    }
+  }
+}
+
+
+.sale-icon {
+  padding: 14px 0;
+
+  width: 48px;
+  height: 48px;
+
+  background: url(../icons/star-sale.svg) no-repeat;
+
+  &__value {
+    display: block;
+    text-align: center;
+  }
+}
+
+.payment-method {
+  margin-bottom: 40px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+
+    @media (max-width: 768px) {
+      gap: 4px;
+    }
+  }
+
+  &__block {
+    position: relative;
+  }
+
+  &__box {
+    @include flex-direction(column);
+
+    padding: 16px;
+
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 1px solid $strokes;
+
+      @include br(10px);
+      content: '';
+    }
+
+    @media (max-width: 768px) {
+      padding: 12px;
+    }
+  }
+
+  &__descrp {
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.radio-input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+
+
+  &:hover+.payment-method__box::before {
+    border: 1px solid $accent__brand;
+  }
+
+  &:checked+.payment-method__box::before {
+    border: 2px solid $accent__brand;
+  }
+}
+
+.form-input {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 16px;
+
+  width: 100%;
+}
+
+.input {
+  position: relative;
+
+
+  .input__field {
+    display: block;
+
+    width: 100%;
+    height: 56px;
+
+    padding: 26px 18px 10px;
+
+    background: $bg__secondary;
+    border: 1px solid $strokes;
+
+    @include standart-text(400, 16px, 20px);
+    @include br(10px);
+
+
+    &:hover {
+      border: 1px solid $text__disable;
+    }
+
+    &:focus {
+      padding: 26px 18px 10px;
+
+      background: none;
+      border: 1px solid $text__disable;
+    }
+
+    &:focus+.input__label,
+    &:not(:placeholder-shown)+.input__label,
+    {
+    top: 12px;
+
+    @include standart-text(400, 11px, 12px);
+    color: $text__secondary;
+  }
+
+  &:invalid:not(:focus):not(:placeholder-shown) {
+    background: $accent__danger-bg ;
+
+    border: 1px solid $accent__danger;
+  }
+
+  &:disabled {
+    background: $bg__secondary-accent;
+
+    color: $text__disable;
+  }
+
+}
+
+&__label {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+
+  transition: 0.2s;
+}
+
+&__error-label {
+  display: block;
+  margin-top: 8px;
+
+  @include standart-text(400, 11px, 12px);
+
+  color: $accent__danger;
+
+}
+
+.input__error {
+  background: $accent__danger-bg;
+  border: 1px solid $accent__danger;
+  color: $text__main;
+}
+}
