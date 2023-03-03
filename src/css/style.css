@@ -520,8 +520,9 @@ body {
   top: 18px;
   left: 18px;
   transition: 0.2s;
+  pointer-events: none;
 }
-.input__error-label {
+.input__error-message {
   display: block;
   margin-top: 8px;
   font-family: Graphik, sans-serif;
@@ -530,7 +531,7 @@ body {
   line-height: 12px;
   color: #FF5733;
 }
-.input .input__error {
+.input .input__field--error {
   background: #FFE6E0;
   border: 1px solid #FF5733;
   color: #000000;

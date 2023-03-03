@@ -325,9 +325,11 @@ body {
   left: 18px;
 
   transition: 0.2s;
+
+  pointer-events: none;
 }
 
-&__error-label {
+&__error-message {
   display: block;
   margin-top: 8px;
 
@@ -337,7 +339,7 @@ body {
 
 }
 
-.input__error {
+.input__field--error {
   background: $accent__danger-bg;
   border: 1px solid $accent__danger;
   color: $text__main;
