@@ -28,8 +28,8 @@ body {
 }
 
 .price {
-  @include vertical-align;
-
+  display: flex;
+  align-items: center;
   background-color: $variable;
 }
 
